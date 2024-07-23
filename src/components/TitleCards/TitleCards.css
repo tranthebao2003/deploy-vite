@@ -1,0 +1,73 @@
+.title-cards{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.card-list {
+    display: flex;
+    gap: 40px;
+    overflow-x: scroll;
+    align-items: center;
+    height: 220px;
+    padding: 0 20px;
+}
+/*::-webkit-scrollbar: tùy chỉnh scrollbar tổng thể
+ở đây mình dùng display none là ẩn nó đi*/
+.card-list::-webkit-scrollbar{
+    display: none;
+}
+
+.card-list img {
+    width: 220px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.card-list .card {
+    position: relative;
+    max-height: 200px;
+}
+
+.card-list .card img:hover{
+    scale: 1.1;
+    box-shadow: 0 0 5px wheat;
+}
+
+.card-list .card p{
+    position: absolute;
+    top: 102% ;
+    right: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 800px) {
+     .title-cards{
+        margin-top: 20px;
+        margin-bottom: 0;
+     }
+     .title-cards h2{
+        font-size: 20px;
+     }
+     .card-list img {
+        width: 200px;
+     }
+
+     .card-list p{
+        font-size: 14px;
+     }
+}
+
+@media (max-width: 500px) {
+    .title-cards h2{
+       font-size: 16px;
+    }
+    .card-list img {
+       width: 170px;
+    }
+
+    .card-list p{
+       font-size: 12px;
+    }
+}

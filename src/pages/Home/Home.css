@@ -1,0 +1,140 @@
+.hero{
+    position: relative;
+}
+
+.banner-img{
+    width: 100%;
+    /* tạo lớp mask cho tấm ảnh ở đây mình dùng linear-gradient
+    - Đầu tiên to right tức là nó sẽ đổ gradient từ trái sáng phải
+    - Transparent là màu bắt đầu từ bên trái, nghĩa là bức ảnh bắt
+    đầu trong suốt từ bên trái nhưng mà nền phía dưới là màu đen
+    nên ta sẽ thấy nó bị đen từ phía bên trái
+    - black 75% này nó không phải màu đen mà nó chỉ độ không trong suốt
+    và nó chiếm 75% chiều rộng*/
+    mask-image: linear-gradient(to right, transparent , black 75%);
+    /* thuộc tính sử dụng webkit để nó tương thích hơn với các web sử dụng
+    weibkit */
+    -webkit-mask-image: linear-gradient(to right, transparent , black 75%);
+    background-repeat: no-repeat;
+}
+
+.hero-caption{
+    position: absolute;
+    width: 100%;
+    padding-left: 6%;
+    bottom: 0;
+}
+
+.caption-img{
+    width: 90%;
+    max-width: 420px;
+    margin-bottom: 30px;
+}
+
+.hero-caption p {
+    max-width: 700px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.hero-btns{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.hero-btns .btn img {
+    width: 25px;
+}
+
+.hero-btns .btn {
+    border: 0;
+    outline: 0;
+    padding: 8px 20px;
+    /* kết hợp giữa inline và flexbox
+    vừa làm cho phần tử trên 1 dòng, nhưng cũng có
+    thể phân bổ linh hoạt nhờ mô hình flexbox */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* select và thẻ có cả 2 class btn và dark-btn
+là con của class hero-btns */
+.hero-btns .btn.dark-btn{
+    color: #fff;
+    background: rgba(91, 91, 91, 0.6);
+}
+
+/* chọn thẻ con btn của class hero-btns để hover */
+.hero-btns .btn:hover{
+    background: rgba(213, 213, 213, 0.6);
+}
+
+/* chọn thẻ có cả 2 class btn và dart-btn là con
+con hero-btrs để hover*/
+.hero-btns .btn.dark-btn:hover{
+    background: rgba(51, 51, 51, 0.6);
+}
+
+.more-cards{
+    padding-left:6% ;
+}
+
+@media (max-width: 1024px) {
+    /*.title-cards cái class này nó ko nằm trong 
+    file home.jsx mà nó nằm trong file TitleCards.jsx
+    sở dĩ home.css select đc là vì TitleCards.jsx
+    này nó là 1 component trong file Home.jsx  */
+    .hero-caption .title-cards{
+        display: none;
+    }
+    .hero-btns{
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero-caption{
+        padding-left: 4%;
+    }
+
+    .caption-img{
+        margin-bottom: 10px;
+        width: 40%;
+    }
+
+    .hero-caption p {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .hero-btns .btn img {
+        width: 20px;
+    }
+
+    .title-cards{
+        padding-right: 2%;
+    }
+}
+
+@media (max-width: 500px) {
+    .caption-img{
+        display: none;
+    }
+
+    .hero-btns .btn img{
+        width: 15px;
+    }
+
+    .hero-btns .btn{
+        padding: 4px 10px;
+        gap: 5px;
+        font-size: 10px;
+    }
+}

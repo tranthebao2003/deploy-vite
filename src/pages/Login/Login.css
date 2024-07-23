@@ -1,0 +1,159 @@
+.login{
+    height: 100vh;
+    /* Việc bạn không cần chỉ định /public/background_banner.jpg mà chỉ cần 
+    /background_banner.jpg là do cấu hình máy chủ web của bạn. Máy chủ web
+     được thiết lập để coi thư mục public là thư mục gốc, do đó mọi yêu 
+     cầu tệp bắt đầu từ thư mục này */
+
+     /* background-image chấp nhận nhiều lớp hình
+     nền lớp ở trên là gradient với 2 màu đen 
+     bán trong suốt 2 chữ số phía sau đại diện cho
+     transparent, phía dưới là tấm ảnh */
+    background-image: linear-gradient(#0000008e, #0000007e), url(/background_banner.jpg);
+    padding: 20px 8%;
+}
+
+.login-logo{
+    width: 150px;
+}
+
+.login-form{
+    width: 100%;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 60px;
+    margin: auto;
+}
+
+.login-form h1{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+.login-form input{
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    margin: 12px 0;
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    /* box-shadow: dương (bên phải âm bên trái) 
+    dương (xuống dưới âm lên trên) độ sắc nét bóng 
+    (càng lớn càng nhòe) độ lớn của bóng màu bóng*/
+    box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.5);
+    
+}
+
+/* presudo edit placeholder trong thẻ input */
+.login-form input::placeholder{
+    color: rgb(168, 168, 168);
+}
+
+.login-form button{
+    width: 100%;
+    padding: 16px;
+    color:white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: 0.3s ease-out;
+}
+
+.login-form .invalid{
+    background: #919191;
+    cursor: default;
+}
+
+.login-form .valid{
+    background: #d2030e;
+    cursor: pointer;
+}
+
+.login-form .valid:hover{
+    background: #ee4049;
+}
+
+.form-help{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #b3b3b3;
+    font-size: 13px;
+}
+
+.remember{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remember input{
+    box-shadow: none;
+    width: 18px;
+    height: 18px;
+    
+}
+
+.form-switch{
+    margin-top: 40px;
+    color: #737373;
+}
+
+.form-switch span{
+    margin-left: 6px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.textAlert{
+    color: #fa6a71;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0;
+}
+
+.divPassword{
+    position: relative;
+    width: 100%;
+}
+
+.lock{
+    width: 22px;
+    position: absolute;
+    top: 30%;
+    right: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.lock:hover{
+    scale: 1.1;
+}
+
+.login-spinner{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-spinner img {
+    width: 60px;
+}
+
+@media (max-width: 500px) {
+    .login{
+        padding: 15px 8%;
+    }
+
+    .login-form{
+        padding: 20px;
+        margin-top: 30px;
+    }
+}
